@@ -76,9 +76,11 @@ def opponents_control(opponents):
             if opponent.y < 0 or opponent.y > core.WINDOW_SIZE[1]:
                 opponents.remove(opponent)
 
+# Function to check if two rectangles are colliding
 def collision(a, b):
     return a[0] < b[2] and a[2] > b[0] and a[1] < b[3] and a[3] > b[1]
 
+# Function to check if the player is colliding with an opponent
 def collisions(player, opponents, target_color):
     if opponents != []:
         for opponent in opponents:
@@ -98,7 +100,6 @@ def collisions(player, opponents, target_color):
                     core.memory("GAME_OVER", True)
 
 def run():
-
     # Clear the screen
     core.cleanScreen()
 
